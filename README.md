@@ -1,3 +1,3 @@
 # nodejs
 
-Learning about node.js
+Learning about Node.js best practices and development standards 
