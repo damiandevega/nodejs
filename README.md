@@ -1,6 +1,6 @@
 # nodejs
 
--Learning about Node.js best practices and development standards
+-Learning about Node.js best practices and development standards as well as es6 JS
 
 -Learning about routes using Express.js
 
