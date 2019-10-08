@@ -9,3 +9,5 @@
 -Learning about websocket.io and how it works
 
 -Learning how to communicate with SQL and noSQL databases
+
+-Learning about precaching
