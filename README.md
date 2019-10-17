@@ -1,4 +1,4 @@
-# nodejs development
+# nodejs development and learning
 
 -Learning about Node.js best practices and development standards as well as es6 JS
 
