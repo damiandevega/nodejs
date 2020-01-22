@@ -1,6 +1,6 @@
 # NodeJS Development Environment
 
--Learning about Node.js best practices and development standards as well as es6 JS
+-Node.js best practices and development standards as well as es6 JS
 
 -Learning about routes using Express.js
 
