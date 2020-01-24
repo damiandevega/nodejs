@@ -10,7 +10,7 @@ const products = [];
 
 // route reached via /admin/add-product => GET
 router.get('/add-product', (req, res, next) => {
-  res.render('add-product', { pageTitle: 'Add Product' })
+  res.render('add-product', { pageTitle: 'Add Product', path: '/admin/add-product' })
 });
 
 // route reached via /admin/add-product => POST
