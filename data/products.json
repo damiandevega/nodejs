@@ -1,1 +1,16 @@
-[{"id":"12345","title":"A Book","imageUrl":"https://www.cloudvps.com/sites/default/files/images/cloudvps_images/kb/CDN/CDN.request-flow.png","description":"This is an awesome book!","price":"20"},{"title":"Another Product","imageUrl":"https://www.cloudvps.com/sites/default/files/images/cloudvps_images/kb/CDN/CDN.request-flow.png","description":"test","price":"19.99","id":"0.6875842030616537"}]
+[
+  {
+    "id": "12345",
+    "title": "A Book",
+    "imageUrl": "https://www.cloudvps.com/sites/default/files/images/cloudvps_images/kb/CDN/CDN.request-flow.png",
+    "description": "This is an awesome book!",
+    "price": "20"
+  },
+  {
+    "id": "0.6875842030616537",
+    "title": "yay product",
+    "imageUrl": "https://www.cloudvps.com/sites/default/files/images/cloudvps_images/kb/CDN/CDN.request-flow.png",
+    "description": "yayyyyy",
+    "price": "19.98"
+  }
+]
