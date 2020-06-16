@@ -10,9 +10,9 @@ const p = path.join(
 module.exports = class Cart {
   static addProduct(id, productPrice) {
     // Fetch the previous cart
-    fs.readFile(p, (err, fileContent) => {
+    fs.readFile(p, (error, fileContent) => {
       let cart = { products: [], totalPrice: 0 };
-      if (!err) {
+      if (!error) {
         cart = JSON.parse(fileContent);
       }
       // Analyze the cart => Find existing product
@@ -32,9 +32,26 @@ module.exports = class Cart {
         cart.products = [...cart.products, updatedProduct];
       }
       cart.totalPrice = cart.totalPrice + +productPrice;
-      fs.writeFile(p, JSON.stringify(cart), err => {
-        console.log(err);
+      fs.writeFile(p, JSON.stringify(cart), error => {
+        console.log(error);
       });
     });
+  }
+
+  static deleteProduct(id, productPrice) {
+    fs.readFile(p, (error, fileContent) => {
+      if (error) {
+        return;
+      }
+      const cart = JSON.parse(fileContent);
+      const updatedCart = { ...cart };
+      const product = updatedCart.products.find(prod => prod.id === id);
+      const productQty = product.qty;
+      updatedCart.products = updatedCart.products.filter(prod => prod.id !== id);
+      updatedCart.totalPrice = cart.totalPrice - (productPrice * productQty);
+      fs.writeFile(p, JSON.stringify(updatedCart), error => {
+        console.log(error);
+      });
+    })
   }
 };
