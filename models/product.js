@@ -1,17 +1,28 @@
+const mongodb = require('mongodb');
 const getDb = require('../util/database').getDb;
 
 class Product {
-  constructor(title, price, description, imageUrl) {
+  constructor(title, price, description, imageUrl, id) {
     this.title = title;
     this.price = price;
     this.description = description;
     this.imageUrl = imageUrl;
+    this._id = id;
   }
 
   save() {
     const db = getDb();
-    return db.collection('products')
-      .insertOne(this)
+    let dbOp;
+    if (this._id) {
+      // Update existing product
+      dbOp = db.collection('products')
+        .updateOne({ _id: new mongodb.ObjectId(this._id) }, { $set: this });
+    } else {
+      // Add new product
+      dbOp = db.collection('products')
+        .insertOne(this);
+    }
+    return dbOp
       .then(result => {
         console.log(result);
       })
@@ -32,6 +43,20 @@ class Product {
       .catch(error => {
         console.log(error);
       });
+  }
+
+  static findById(prodId) {
+    const db = getDb();
+    return db.collection('products')
+      .find({ _id: new mongodb.ObjectId(prodId) })
+      .next()
+      .then(product => {
+        console.log(product);
+        return product;
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 }
 
