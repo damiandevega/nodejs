@@ -28,7 +28,6 @@ const productSchema = new Schema({
 
 module.exports = mongoose.model('Product', productSchema);
 
-
 // const mongodb = require('mongodb');
 // const getDb = require('../util/database').getDb;
 
@@ -46,61 +45,63 @@ module.exports = mongoose.model('Product', productSchema);
 //     const db = getDb();
 //     let dbOp;
 //     if (this._id) {
-//       // Update existing product
-//       dbOp = db.collection('products')
+//       // Update the product
+//       dbOp = db
+//         .collection('products')
 //         .updateOne({ _id: this._id }, { $set: this });
 //     } else {
-//       // Add new product
-//       dbOp = db.collection('products')
-//         .insertOne(this);
+//       dbOp = db.collection('products').insertOne(this);
 //     }
 //     return dbOp
 //       .then(result => {
 //         console.log(result);
 //       })
-//       .catch(error => {
-//         console.log(error);
+//       .catch(err => {
+//         console.log(err);
 //       });
 //   }
 
 //   static fetchAll() {
 //     const db = getDb();
-//     return db.collection('products')
+//     return db
+//       .collection('products')
 //       .find()
 //       .toArray()
 //       .then(products => {
 //         console.log(products);
 //         return products;
 //       })
-//       .catch(error => {
-//         console.log(error);
+//       .catch(err => {
+//         console.log(err);
 //       });
 //   }
 
 //   static findById(prodId) {
 //     const db = getDb();
-//     return db.collection('products')
+//     return db
+//       .collection('products')
 //       .find({ _id: new mongodb.ObjectId(prodId) })
 //       .next()
 //       .then(product => {
 //         console.log(product);
 //         return product;
 //       })
-//       .catch(error => {
-//         console.log(error);
-//       })
+//       .catch(err => {
+//         console.log(err);
+//       });
 //   }
 
 //   static deleteById(prodId) {
 //     const db = getDb();
-//     return db.collection('products')
+//     return db
+//       .collection('products')
 //       .deleteOne({ _id: new mongodb.ObjectId(prodId) })
 //       .then(result => {
 //         console.log('Deleted');
 //       })
-//       .catch(error => {
-//         console.log(error);
-//       })
+//       .catch(err => {
+//         console.log(err);
+//       });
 //   }
 // }
 
